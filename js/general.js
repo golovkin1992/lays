@@ -50,7 +50,7 @@
 		//
 		//Добавление класса для мобильного меню
 	window.addEventListener('DOMContentLoaded', function() {
-  var nodes = document.querySelectorAll('.header-wrap');
+  var nodes = document.querySelectorAll('.menu');
 
   [].forEach.call(nodes, function(a) {
     a.addEventListener('click', function(event) {
