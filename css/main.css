@@ -76,6 +76,7 @@ html {
   height: 100%;
   width: 150px;
   position: fixed;
+  top: 0;
 }
 
 .logo {
@@ -558,11 +559,11 @@ html {
 
   .menu {
     flex-direction: row;
-    height: 100%;
+    height: 80px;
     width: 100%;
     background-image: none;
     justify-content: space-between;
-    position: relative;
+    background-color: #f6f6f6;
   }
 
   .logo {
@@ -599,6 +600,14 @@ html {
     letter-spacing: -0.3px;
   }
 
+  .down.menu {
+    top: -80px;
+    transition: top 0.5s;
+  }
+
+  .menu {
+    transition: top 0.5s;
+  }
   .menu__items {
     display: block;
     position: absolute;
@@ -731,7 +740,7 @@ html {
   }
 
   .open .first {
-    transform: rotate(45deg) translate3d(-1px, -1px, 0);
+    transform: rotate(45deg) translate3d(-1px, -2px, 0);
     transition: 0.2s ease-in-out;
   }
 
@@ -741,7 +750,7 @@ html {
   }
 
   .open .third {
-    transform: rotate(-45deg) translate3d(0, 0, 0);
+    transform: rotate(-44deg) translate3d(0, 0, 0);
     transition: 0.2s ease-in-out;
   }
 

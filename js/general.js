@@ -37,7 +37,6 @@
 			} else
 		
 		window.onscroll = function() {
-
 			for (var i = 0 ; i <= 3; i++) {
 			var some = document.querySelectorAll("."+arr[i])[0];
 			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -46,17 +45,47 @@
 				block[0].classList.add("scroll-animate");
   				}		
   			}
+
+  		
+
 		}
+
+	var updownElem = document.querySelector('.menu');
+	var el = document.getElementsByClassName('menu');
+	var pageY = window.pageYOffset || document.documentElement.scrollTop;
+    var TempScrollTop = 0;
+
+    window.onscroll = function() {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop;
+      
+
+          if (TempScrollTop < pageY) {
+            updownElem.classList.remove("open");
+            updownElem.classList.add("down");
+          }
+       		else if (TempScrollTop > pageY)
+       			{TempScrollTop = pageY
+       				updownElem.classList.remove("down");
+       				
+       			}
+       		TempScrollTop = pageY;
+    
+ 
+         
+      
+    }
 		//
 		//Добавление класса для мобильного меню
 	window.addEventListener('DOMContentLoaded', function() {
   var nodes = document.querySelectorAll('.menu');
-
+  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
   [].forEach.call(nodes, function(a) {
     a.addEventListener('click', function(event) {
       event.preventDefault()
       a.classList.toggle("open")
+ 
     });
 
   });
 });
+
