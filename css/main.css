@@ -27,8 +27,13 @@
   src: url("../fonts/GothamPro-Bold.eot");
   src: local("Gotham Pro Bold"), local("GothamPro-Bold"), url("../fonts/GothamPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro-Bold.ttf") format("truetype");
 }
-/*Фон меню */
+/*Фон */
+/*Меню */
 /*Цвета текста */
+/*Цвет кнопки */
+/*Цвет кнопки мобильная версия */
+/*Фон подвал */
+/*Иконки в подвале */
 html,
 body {
   position: relative;
@@ -78,8 +83,7 @@ html {
   position: fixed;
   top: 0;
 }
-
-.logo {
+.menu__logo {
   background-image: url("../img/logo.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -87,7 +91,7 @@ html {
   height: 90px;
   margin-top: 22px;
 }
-.logo_footer {
+.menu__logo_footer {
   width: 69px;
   height: 89px;
   background-image: url("../img/footer_logo.jpg");
@@ -108,13 +112,13 @@ html {
 .slogan_fs {
   font-size: 0.4rem;
 }
-.slogan_main-caption {
+.slogan_font-family-black {
   font-family: GothamPro-Black;
   font-size: 1.8rem;
   line-height: 1.8rem;
   letter-spacing: 4px;
 }
-.slogan_gallery {
+.slogan_bg-white {
   color: #f73934;
   font-size: 1rem;
   font-family: GothamPro;
@@ -161,13 +165,13 @@ html {
   color: #555;
   text-align: center;
 }
-.text_icons {
+.text_grey {
   padding-top: 0.4rem;
   font-size: 0.4rem;
   line-height: 0.55rem;
   color: #45370a;
 }
-.text_about {
+.text_white {
   margin-top: 1.32rem;
   font-size: 0.5rem;
   line-height: 0.6rem;
@@ -185,7 +189,7 @@ html {
   color: white;
 }
 
-#menu__check, .menu__mobile, .close, .line, .text_about-mobile, .caption_about-mobile {
+#menu__check, .menu__mobile, .menu__item_bg-dark-grey, .line, .text_about-mobile, .caption_mobile {
   display: none;
 }
 
@@ -220,14 +224,12 @@ html {
   font-weight: 100;
 }
 
-.content-wrap {
+.main-row-1__content-wrap {
   display: flex;
   flex-direction: column;
 }
 
 .icons {
-  top: 0.55rem;
-  left: 1.22rem;
   width: 17.8rem;
   height: 6rem;
   margin: 1.6rem 0 0 1.55rem;
@@ -281,13 +283,13 @@ html {
   background-color: #000;
   opacity: 0.25;
 }
-.btn_gallery {
+.btn_gallery-margin {
   margin: 0.86rem 0 0 -0.18rem;
 }
-.btn_about {
+.btn_about-margin {
   margin-top: 0.79rem;
 }
-.btn_lays {
+.btn_lays-margin {
   margin: 1rem 5rem 0;
 }
 
@@ -297,13 +299,13 @@ html {
   font-size: 0.98rem;
   line-height: 1.35rem;
 }
-.caption_about {
+.caption_white {
   color: white;
   margin-left: 5.29rem;
   font-size: 1.36rem;
   line-height: 1.43rem;
 }
-.caption_about-mobile {
+.caption_mobile {
   margin-left: 4rem;
   font-size: 3.55rem;
   line-height: 3.75rem;
@@ -472,19 +474,10 @@ html {
   margin-top: -5.6rem;
 }
 
-.scroll-animate {
+.js-scroll-animate {
   transform: translate3d(0, 0, 0);
   opacity: 1;
   transition: opacity 1s, transform 1s ease;
-}
-
-.copyright {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #b4b4b4;
-  font-size: 12px;
-  line-height: 95px;
-  margin-left: 6px;
-  float: left;
 }
 
 .row-5 {
@@ -499,6 +492,14 @@ html {
   display: -o-flex;
   display: flex;
   justify-content: flex-end;
+}
+.row-5__copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b4b4b4;
+  font-size: 12px;
+  line-height: 95px;
+  margin-left: 6px;
+  float: left;
 }
 .row-5__link {
   width: 90px;
@@ -516,23 +517,19 @@ html {
 .row-5__link:hover {
   opacity: 1;
 }
-
-.fb {
+.row-5__link_fb {
   background-image: url("../img/footerfull_icon1.jpg");
   background-color: #326aa2;
 }
-
-.vk {
+.row-5__link_vk {
   background-image: url("../img/footerfull_icon2.jpg");
   background-color: #3479a8;
 }
-
-.ls {
+.row-5__link_ls {
   background-image: url("../img/footerfull_icon3.jpg");
   background-color: #edbf11;
 }
-
-.yt {
+.row-5__link_yt {
   background-image: url("../img/footerfull_icon4.jpg");
   background-color: #c4070e;
 }
@@ -565,8 +562,7 @@ html {
     justify-content: space-between;
     background-color: #f6f6f6;
   }
-
-  .logo {
+  .menu__logo {
     width: 57px;
     height: 50px;
     background-image: url("../img/logo.png");
@@ -581,7 +577,7 @@ html {
     margin-right: 8px;
     margin-top: 0;
   }
-  .slogan_main-caption {
+  .slogan_font-family-black {
     font-size: 37px;
     letter-spacing: 1px;
     color: #d62b2b;
@@ -591,7 +587,7 @@ html {
     font-size: 13px;
     margin-right: 0;
   }
-  .slogan_gallery {
+  .slogan_bg-white {
     font-size: 2.6rem;
     padding: 0 0.7rem;
     margin-left: -0.58rem;
@@ -600,7 +596,7 @@ html {
     letter-spacing: -0.3px;
   }
 
-  .down.menu {
+  .js-scroll-down.menu {
     top: -80px;
     transition: top 0.5s;
   }
@@ -624,7 +620,7 @@ html {
     height: 25%;
     padding-top: 0;
     background-color: #f6f6f6;
-    color: black;
+    color: #000;
     border-top: 1px solid #ddd;
     transform: translate3d(-50px, 0, 0);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -640,7 +636,7 @@ html {
   .menu__item:last-child {
     padding-top: 0;
   }
-  .menu__item.close {
+  .menu__item_bg-dark-grey {
     transform: translate3d(50px, 0, 0);
     opacity: 0;
     display: block;
@@ -659,6 +655,13 @@ html {
     transition: 0.2s ease-in-out;
     transform-origin: left center;
   }
+  .menu__line_second {
+    opacity: 1;
+    margin-top: 5px;
+  }
+  .menu__line_third {
+    margin-top: 5px;
+  }
   .menu__mobile {
     display: block;
     margin-right: 25px;
@@ -672,23 +675,23 @@ html {
     width: 40px;
   }
 
-  .open .menu__items {
+  .js-menu-open .menu__items {
     z-index: 2;
     height: 320px;
     transition: none;
   }
-  .open .menu__item {
+  .js-menu-open .menu__item {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-  .open .menu__item:nth-child(2) {
+  .js-menu-open .menu__item:nth-child(2) {
     padding-bottom: 0;
     padding-top: 0;
   }
-  .open .menu__item:last-child {
+  .js-menu-open .menu__item:last-child {
     padding-top: 0;
   }
-  .open .menu__item.close {
+  .js-menu-open .menu__item_close {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
@@ -711,13 +714,13 @@ html {
     margin: 0;
     bottom: 23px;
   }
-  .text_icons {
+  .text_grey {
     font-size: 13px;
     padding-top: 11px;
     line-height: 14px;
     letter-spacing: -0.1px;
   }
-  .text_about {
+  .text_white {
     display: none;
   }
   .text_about-mobile {
@@ -730,27 +733,18 @@ html {
     text-align: left;
   }
 
-  .second {
-    opacity: 1;
-    margin-top: 5px;
-  }
-
-  .third {
-    margin-top: 5px;
-  }
-
-  .open .first {
+  .js-menu-open .menu__line_first {
     transform: rotate(45deg) translate3d(-1px, -2px, 0);
     transition: 0.2s ease-in-out;
   }
 
-  .open .second {
+  .js-menu-open .menu__line_second {
     opacity: 0;
     transition: 0.2s ease-in-out;
   }
 
-  .open .third {
-    transform: rotate(-44deg) translate3d(0, 0, 0);
+  .js-menu-open .menu__line_third {
+    transform: rotate(-45deg) translate3d(0, 0, 0);
     transition: 0.2s ease-in-out;
   }
 
@@ -780,7 +774,7 @@ html {
     line-height: 37px;
   }
 
-  .content-wrap {
+  .main-row-1__content-wrap {
     align-items: center;
   }
 
@@ -808,19 +802,18 @@ html {
     height: 3.9rem;
     font-size: 1.4rem;
     letter-spacing: 0.4px;
-    background-color: rgba(168, 5, 0, 0.1);
   }
-  .btn_gallery {
+  .btn_gallery-margin {
     bottom: 3.6rem;
     margin: 0 0 0 50%;
   }
-  .btn_about {
+  .btn_about-margin {
     position: absolute;
     left: 50%;
     bottom: 6rem;
     margin-left: -7rem;
   }
-  .btn_lays {
+  .btn_lays-margin {
     margin-top: 16px;
   }
   .btn:hover {
@@ -839,10 +832,10 @@ html {
     font-size: 2.5rem;
     line-height: 3.5rem;
   }
-  .caption_about {
+  .caption_white {
     display: none;
   }
-  .caption_about-mobile {
+  .caption_mobile {
     display: block;
     margin-left: 4rem;
     font-size: 3.55rem;
@@ -941,7 +934,7 @@ html {
     align-items: center;
   }
 
-  .logo_footer {
+  .menu__logo_footer {
     display: none;
   }
 
@@ -949,13 +942,13 @@ html {
     grid-area: row-5;
     position: relative;
   }
-  .row-5 .copyright {
+  .row-5__copyright {
     margin-left: 29px;
     font-size: 9px;
     line-height: 42px;
     letter-spacing: -0.3px;
   }
-  .row-5 .copyright .rules {
+  .row-5__rules {
     display: none;
   }
   .row-5__link {
@@ -977,8 +970,7 @@ html {
   .menu {
     width: 110px;
   }
-
-  .logo_footer {
+  .menu__logo_footer {
     width: 42px;
     height: 50px;
     background-image: url("../img/footer_logo.jpg");
@@ -990,55 +982,9 @@ html {
     height: 50px;
     background-size: 31px 32px;
   }
-
-  .copyright {
+  .row-5__copyright {
     font-size: 12px;
     line-height: 50px;
-  }
-}
-@media (max-width: 1848px) {
-  html {
-    font-size: 54px;
-  }
-}
-@media (max-width: 1816px) {
-  html {
-    font-size: 53px;
-  }
-}
-@media (max-width: 1784px) {
-  html {
-    font-size: 52px;
-  }
-}
-@media (max-width: 1752px) {
-  html {
-    font-size: 51px;
-  }
-}
-@media (max-width: 1720px) {
-  html {
-    font-size: 50px;
-  }
-}
-@media (max-width: 1688px) {
-  html {
-    font-size: 49px;
-  }
-}
-@media (max-width: 1656px) {
-  html {
-    font-size: 48px;
-  }
-}
-@media (max-width: 1624px) {
-  html {
-    font-size: 47px;
-  }
-}
-@media (max-width: 1592px) {
-  html {
-    font-size: 46px;
   }
 }
 @media (max-width: 1560px) {
@@ -1078,34 +1024,34 @@ html {
     max-width: 1920px;
     min-width: 320px;
   }
-  html .row-5 .logo_footer {
+  html .row-5 .menu__logo_footer {
     width: 50px;
     height: 60px;
     background-image: url("../img/footer_logo1.jpg");
     background-size: 50px 60px;
-  }
-  html .fb {
-    background-image: url("../img/footer_icon1.jpg");
-    background-color: #326aa2;
-  }
-  html .vk {
-    background-image: url("../img/footer_icon2.jpg");
-    background-color: #3479a8;
-  }
-  html .ls {
-    background-image: url("../img/footer_icon3.jpg");
-    background-color: #edbf11;
-  }
-  html .yt {
-    background-image: url("../img/footer_icon4.jpg");
-    background-color: #c4070e;
   }
   html .row-5__link {
     width: 60px;
     height: 60px;
     background-size: 31px 32px;
   }
-  html .copyright {
+  html .row-5__link_fb {
+    background-image: url("../img/footer_icon1.jpg");
+    background-color: #326aa2;
+  }
+  html .row-5__link_vk {
+    background-image: url("../img/footer_icon2.jpg");
+    background-color: #3479a8;
+  }
+  html .row-5__link_ls {
+    background-image: url("../img/footer_icon3.jpg");
+    background-color: #edbf11;
+  }
+  html .row-5__link_yt {
+    background-image: url("../img/footer_icon4.jpg");
+    background-color: #c4070e;
+  }
+  html .row-5__copyright {
     font-size: 12px;
     line-height: 65px;
   }

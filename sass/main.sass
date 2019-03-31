@@ -25,7 +25,7 @@ html
 	max-width: 1920px
 	min-width: 320px
 	overflow: hidden
-	background-color: #ffda2d
+	background-color: $grid-bg
 
 .header-col-1
 	grid-row: 1 / 6
@@ -47,25 +47,22 @@ html
 	width: 150px
 	position: fixed
 	top: 0
-
-
-
-.logo
-	background-image: url('../img/logo.png')
-	background-position: center
-	background-repeat: no-repeat
-	width: 100%
-	height: 90px
-	margin-top: 22px
-	&_footer
-		width: 69px
-		height: 89px
-		background-image: url('../img/footer_logo.jpg')
-		background-size: 69px 89px
-		float: left
-		margin-left: 21px
-		margin-top: 0
-		padding: 0
+	&__logo
+		background-image: url('../img/logo.png')
+		background-position: center
+		background-repeat: no-repeat
+		width: 100%
+		height: 90px
+		margin-top: 22px
+		&_footer
+			width: 69px
+			height: 89px
+			background-image: url('../img/footer_logo.jpg')
+			background-size: 69px 89px
+			float: left
+			margin-left: 21px
+			margin-top: 0
+			padding: 0
 .slogan
 	font-family: GothamPro-Medium
 	color: $text-active
@@ -74,16 +71,16 @@ html
 	margin-top: 12px
 	&_fs
 		font-size: 0.4rem
-	&_main-caption
+	&_font-family-black
 		font-family: GothamPro-Black
 		font-size: 1.8rem
 		line-height: 1.8rem
 		letter-spacing: 4px
-	&_gallery
+	&_bg-white
 		color: #f73934
 		font-size: 1rem
 		font-family: GothamPro
-		background-color: white
+		background-color: $white
 		display: inline-block
 		padding: 0.18rem
 		margin-left: -.18rem
@@ -98,15 +95,15 @@ html
 		width: 100%
 		height: 96px
 		text-align: center
-		border-top: 1px solid  #f6f6f6
-		border-bottom: 1px solid  #f6f6f6
+		border-top: 1px solid  $menu-bg
+		border-bottom: 1px solid  $menu-bg
 		transition: all 1s
 		padding-top: 20px
 		&:hover
-			background-color: white	
+			background-color: $white	
 			transition: background-color 1s ease 
-			border-top: 1px solid #ddd
-			border-bottom: 1px solid #ddd
+			border-top: 1px solid $border-item
+			border-bottom: 1px solid $border-item
 			cursor: pointer
 
 	&__item:nth-child(2)
@@ -119,20 +116,20 @@ html
 	padding-top: 10px
 	font-family: 'GothamPro'
 	font-size: 14px
-	color: #555
+	color: $text-menu
 	text-align: center
 	
-	&_icons
+	&_grey
 		padding-top: 0.4rem
 		font-size: 0.4rem
 		line-height: 0.55rem
-		color: #45370a
-	&_about
+		color: $text-icons
+	&_white
 		margin-top: 1.32rem
 		font-size: .5rem
 		line-height: .6rem
 		width: 10.72rem
-		color: white
+		color: $white
 		text-align: left
 		padding-top: 0
 	&_about-mobile
@@ -141,10 +138,10 @@ html
 		line-height: 2.1rem
 		width: 20rem
 		margin-left: 4rem
-		color: white
+		color: $white
 
 	
-#menu__check, .menu__mobile,.close, .line, .text_about-mobile, .caption_about-mobile
+#menu__check, .menu__mobile,.menu__item_bg-dark-grey, .line, .text_about-mobile, .caption_mobile
 	display: none
 
 .main-row-1
@@ -155,15 +152,14 @@ html
 	position: relative
 	height: 100%
 	&__caption
-		color: #f73934
+		color: $text-active
 		margin-left: 1.73rem
-		
 		font-family: GothamPro-Light
 		letter-spacing: 5px
 	&__first
 		font-family: GothamPro-Medium
 		font-size: 2.18rem
-		color: #f73934
+		color: $text-active
 		font-weight: 300
 	&__middle
 		font-size: 1.23rem
@@ -174,13 +170,11 @@ html
 		font-size: 1.18rem
 		font-weight: 100
 		
-.content-wrap
+.main-row-1__content-wrap
 	display: flex
 	flex-direction: column
 
 .icons
-	top: 0.55rem
-	left: 1.22rem
 	width: 17.8rem
 	height: 6rem
 	margin: 1.6rem 0 0 1.55rem
@@ -192,7 +186,7 @@ html
 	&__icon
 		width: 2.75rem
 		height: 2.75rem
-		background-color: white
+		background-color: $white
 		background-size: 2.49rem 2.49rem
 		background-position: center
 		border-radius: 50%
@@ -212,36 +206,36 @@ html
 	position: relative
 	width: 5.5rem
 	height: 1.58rem
-	background-color: rgba(143,12,0,.1)
+	background-color: $btn
 	text-align: center
 	font-size: .57rem
-	color: white
+	color: $white
 	letter-spacing: 1px
 	line-height: 1.5rem
 	cursor: pointer
-	border: 2px solid white
+	border: 2px solid $white
 	&:hover
 		transition: all 2s ease
-		background-color: #000
+		background-color: $black
 		opacity: 0.25
-	&_gallery
+	&_gallery-margin
 		margin: .86rem 0 0 -.18rem
-	&_about
+	&_about-margin
 		margin-top: 0.79rem
-	&_lays
+	&_lays-margin
 		margin: 1rem 5rem 0
 
 .caption
 	font-family: GothamPro-Bold
-	color: #000
+	color: $black
 	font-size: .98rem
 	line-height: 1.35rem
-	&_about
-		color: white
+	&_white
+		color: $white
 		margin-left: 5.29rem
 		font-size: 1.36rem
 		line-height: 1.43rem
-	&_about-mobile
+	&_mobile
 		margin-left: 4rem
 		font-size: 3.55rem
 		line-height: 3.75rem
@@ -281,7 +275,7 @@ html
 .gallery-col-2
 	grid-column: 3 / 3
 	grid-row: 2 / 3
-	background-color: white
+	background-color: $white
 
 	&__photos
 		width: 100%
@@ -313,7 +307,7 @@ html
 	&__content
 		position: relative
 		margin: 3.82rem 0 0 1.9rem
-		color: white	
+		color: $white	
 
 	&__content:before
 		position: absolute
@@ -337,11 +331,7 @@ html
 		right: -1.5rem
 		top: 50%
 		margin-top: -4.29rem
-		
 
-
-	
-	
 .animate
 	position: relative
 	z-index: 1
@@ -398,21 +388,15 @@ html
 		left: -1.6rem
 		top: 30%
 		margin-top: -5.6rem
-.scroll-animate
+.js-scroll-animate
 	transform: translate3d(0,0,0)
 	opacity: 1
 	transition: opacity 1s, transform 1s ease
-.copyright
-	font-family: Arial,Helvetica,sans-serif
-	color: #b4b4b4
-	font-size: 12px
-	line-height: 95px
-	margin-left: 6px
-	float: left
+
 .row-5
 	grid-row: 5 / 5
 	grid-column: 2 / 4
-	background-color: #3c3c3c
+	background-color: $footer-bg
 	&__socials
 		display: -webkit-flex
 		display: -moz-flex
@@ -420,6 +404,13 @@ html
 		display: -o-flex
 		display: flex
 		justify-content: flex-end
+	&__copyright
+		font-family: Arial,Helvetica,sans-serif
+		color: $text-copyright
+		font-size: 12px
+		line-height: 95px
+		margin-left: 6px
+		float: left
 	&__link
 		width: 90px
 		height: 90px
@@ -434,18 +425,18 @@ html
 		transition: opacity .3s ease
 		&:hover
 			opacity: 1
-.fb
-	background-image: url('../img/footerfull_icon1.jpg')
-	background-color: #326aa2
-.vk
-	background-image: url('../img/footerfull_icon2.jpg')
-	background-color: #3479a8
-.ls
-	background-image: url('../img/footerfull_icon3.jpg')
-	background-color: #edbf11
-.yt
-	background-image: url('../img/footerfull_icon4.jpg')
-	background-color: #c4070e
+		&_fb
+			background-image: url('../img/footerfull_icon1.jpg')
+			background-color: $icon1-color
+		&_vk
+			background-image: url('../img/footerfull_icon2.jpg')
+			background-color: $icon2-color
+		&_ls
+			background-image: url('../img/footerfull_icon3.jpg')
+			background-color: $icon3-color
+		&_yt
+			background-image: url('../img/footerfull_icon4.jpg')
+			background-color: $icon4-color
 
 @media (max-width:680px)
 
@@ -469,35 +460,35 @@ html
 		width: 100%
 		background-image: none
 		justify-content: space-between
-		background-color: #f6f6f6
-	.logo
-		width: 57px
-		height: 50px
-		background-image: url('../img/logo.png')
-		background-size: 57px 50px
-		background-repeat: no-repeat
-		margin-left: 19px
-		margin-top: 0
+		background-color: $menu-bg
+		&__logo
+			width: 57px
+			height: 50px
+			background-image: url('../img/logo.png')
+			background-size: 57px 50px
+			background-repeat: no-repeat
+			margin-left: 19px
+			margin-top: 0
 	.slogan
 		font-size: 19.5px
 		margin-right: 8px
 		margin-top: 0
-		&_main-caption
+		&_font-family-black
 			font-size: 37px
 			letter-spacing: 1px
-			color: #d62b2b
+			color: $text-active-mobile
 			margin-right: 0
 		&_fs
 			font-size: 13px
 			margin-right: 0
-		&_gallery
+		&_bg-white
 			font-size: 2.6rem
 			padding: 0 .7rem
 			margin-left: -.58rem
 			margin-top: 4px
 			margin-right: 0
 			letter-spacing: -.3px
-	.down.menu
+	.js-scroll-down.menu
 		top: -80px
 		transition: top 0.5s
 	.menu
@@ -516,9 +507,9 @@ html
 			position: relative
 			height: 25%
 			padding-top: 0
-			background-color: #f6f6f6
-			color: black
-			border-top: 1px solid #ddd
+			background-color: $menu-bg
+			color: $black
+			border-top: 1px solid $border-item
 			transform: translate3d(-50px, 0, 0)
 			transition: transform (.5s ease, opacity .5s ease)
 			&:nth-child(2)
@@ -529,24 +520,29 @@ html
 				transform: translate3d(-50px, 0, 0)
 			&:last-child
 				padding-top: 0
-			&.close
+			&_bg-dark-grey
 				transform: translate3d(50px, 0, 0)
 				opacity: 0
 				display: block
-				color: #8e8d8d
+				color: $last-mobile-child
 				font-size: 0.4rem
 				height: 20%
 				letter-spacing: .2px
-				background-color: #f0eded
-				text-shadow: 1px 2px 2px white
+				background-color: $last-mobile-child-bg
+				text-shadow: 1px 2px 2px $white
 			
 		&__line
 			display: block
 			width: 32px
 			height: 5px
-			background: #fc202e
+			background: $mobile-menu-icon
 			transition: .2s ease-in-out
 			transform-origin: left center
+			&_second
+				opacity: 1
+				margin-top: 5px
+			&_third
+				margin-top: 5px
 		&__mobile
 			display: block
 			margin-right: 25px
@@ -559,7 +555,7 @@ html
 			width: 40px
 	
 	
-	.open .menu
+	.js-menu-open .menu
 
 		&__items
 			z-index: 2
@@ -574,7 +570,7 @@ html
 			&:last-child
 				padding-top: 0
 
-			&.close
+			&_close
 				opacity: 1	
 				transform: translate3d(0, 0, 0)
 	
@@ -593,13 +589,12 @@ html
 			right: 0
 			margin: 0
 			bottom: 23px
-
-		&_icons
+		&_grey
 			font-size: 13px
 			padding-top: 11px
 			line-height: 14px
 			letter-spacing: -.1px 
-		&_about
+		&_white
 			display: none
 		&_about-mobile
 			display: block
@@ -610,22 +605,18 @@ html
 			margin-left: 4.3rem
 			text-align: left
 
-	.second
-		opacity: 1
-		margin-top: 5px
-	.third
-		margin-top: 5px
-	.open .first
+
+	.js-menu-open .menu__line_first
 		transform: rotate(45deg) translate3d(-1px,-2px,0)
 		transition: .2s ease-in-out
 	
-	.open .second
+	.js-menu-open .menu__line_second
 		opacity: 0
 		transition: .2s ease-in-out
 		
 
-	.open .third
-		transform: rotate(-44deg) translate3d(0,0,0)
+	.js-menu-open .menu__line_third
+		transform: rotate(-45deg) translate3d(0,0,0)
 		transition: .2s ease-in-out	
 
 	.main-row-1
@@ -636,11 +627,11 @@ html
 		&__caption
 			order: -1
 			margin-top: 20px
-			color: #d62b2b
+			color: $text-active-mobile
 			letter-spacing: 1px
 		&__first
 			font-size: 44px
-			color: #d62b2b
+			color: $text-active-mobile
 		&__middle
 			font-size: 25px
 			line-height: 25px
@@ -650,7 +641,7 @@ html
 			font-size: 25px
 			line-height: 37px
 
-	.content-wrap
+	.main-row-1__content-wrap
 		align-items: center
 	
 	.icons
@@ -667,30 +658,25 @@ html
 			height: 64px
 			background-size: 64px 64px
 		
-
-
-
-
 	.btn
 		width: 14rem
 		height: 3.9rem
 		font-size: 1.4rem
 		letter-spacing: .4px
 		
-		background-color: rgba(168,5,0,.1)
-		&_gallery
+		&_gallery-margin
 			bottom: 3.6rem
 			margin: 0 0 0 50%
-		&_about
+		&_about-margin
 			position: absolute
 			left: 50%
 			bottom: 6rem
 			margin-left: -7rem
-		&_lays
+		&_lays-margin
 			margin-top: 16px
 		&:hover
 			transition: none
-			background-color: rgba(168, 5, 0, 0.1)
+			background-color: $btn-mobile
 			opacity: 1
 		&:active
 			outline: none
@@ -699,14 +685,14 @@ html
 	.caption
 		font-size: 2.5rem
 		line-height: 3.5rem
-		&_about
+		&_white
 			display: none
-		&_about-mobile
+		&_mobile
 			display: block
 			margin-left: 4rem
 			font-size: 3.55rem
 			line-height: 3.75rem
-			color: white
+			color: $white
 		&_lays
 			font-size: 3.7rem
 			
@@ -716,7 +702,7 @@ html
 		grid-area: gallery-col-1
 		background-image: url('../img/mobile/gallery_block_mobile.png')
 		background-size: 100% 100%
-		background-color: white
+		background-color: $white
 		&__content
 			margin: 18.6rem 0 0 4.29rem
 		&__content:after
@@ -746,7 +732,7 @@ html
 	.about-col-1
 		grid-area: about-col-1
 		background-image: url('../img/mobile/about_block_mobile.png')
-		background-color: #1963c2
+		background-color: $about-block-bg
 		&__content
 			position: static
 			margin: 0
@@ -775,7 +761,7 @@ html
 	.lays-col-2
 		grid-area: lays-col-2
 		background-image: url('../img/mobile/lays_block_mobile2.png')
-		background-color: #b1d6f1
+		background-color: $lays-block-bg
 		background-position: center
 		&__content
 			height: 85%
@@ -784,19 +770,18 @@ html
 			justify-content: flex-end
 			align-items: center
 		
-	.logo_footer
+	.menu__logo_footer
 		display: none			
 	.row-5
 		grid-area: row-5
 		position: relative
-		& .copyright
+		&__copyright
 			margin-left: 29px
 			font-size: 9px
 			line-height: 42px
 			letter-spacing: -.3px
-			& .rules
-				display: none
-		
+		&__rules
+			display: none
 		&__link
 			width: 45px
 			height: 42px
@@ -812,74 +797,21 @@ html
 		grid-template-rows: 14.5em repeat(3, 15.9334em) 50px
 	.menu
 		width: 110px
-	.logo_footer
-		width: 42px
-		height: 50px
-		background-image: url('../img/footer_logo.jpg')
-		background-size: 42px 50px
+		&__logo_footer
+			width: 42px
+			height: 50px
+			background-image: url('../img/footer_logo.jpg')
+			background-size: 42px 50px
 
-	.row-5__link
-		width: 50px
-		height: 50px
-		background-size: 31px 32px
-	.copyright
-		font-size: 12px
-		line-height: 50px
+	.row-5
+		&__link
+			width: 50px
+			height: 50px
+			background-size: 31px 32px
+		&__copyright
+			font-size: 12px
+			line-height: 50px
 
-	
-
-
-@media (max-width:1848px) 
-	html
-		font-size: 54px
-  
-
-
-@media (max-width:1816px) 
-	html
-		font-size: 53px
-  
-
-
-@media (max-width:1784px) 
-	html
-		font-size: 52px
-  
-
-
-@media (max-width:1752px) 
-	html
-		font-size: 51px
-  
-
-
-@media (max-width:1720px) 
-	html
-		font-size: 50px
-  
-
-
-@media (max-width:1688px) 
-	html
-		font-size: 49px
-  
-
-
-@media (max-width:1656px) 
-	html
-		font-size: 48px
-  
-
-
-@media (max-width:1624px) 
-	html
-		font-size: 47px
-  
-
-
-@media (max-width:1592px) 
-	html
-		font-size: 46px
   
 
 
@@ -924,35 +856,34 @@ html
 			max-width: 1920px
 			min-width: 320px
 		.row-5 
-			& .logo_footer
+			.menu__logo_footer
 				width: 50px
 				height: 60px
 				background-image: url('../img/footer_logo1.jpg')
 				background-size: 50px 60px
-		.fb
-			background-image: url('../img/footer_icon1.jpg')
-			background-color: #326aa2
-		.vk
-			background-image: url('../img/footer_icon2.jpg')
-			background-color: #3479a8
-		.ls
-			background-image: url('../img/footer_icon3.jpg')
-			background-color: #edbf11
-		.yt
-			background-image: url('../img/footer_icon4.jpg')
-			background-color: #c4070e
-
-		.row-5__link
-			width: 60px
-			height: 60px
-			background-size: 31px 32px
-		.copyright
-			font-size: 12px
-			line-height: 65px
 		
 
-	
-
+		.row-5
+			&__link
+				width: 60px
+				height: 60px
+				background-size: 31px 32px
+				&_fb
+					background-image: url('../img/footer_icon1.jpg')
+					background-color: $icon1-color
+				&_vk
+					background-image: url('../img/footer_icon2.jpg')
+					background-color: $icon2-color
+				&_ls
+					background-image: url('../img/footer_icon3.jpg')
+					background-color: $icon3-color
+				&_yt
+					background-image: url('../img/footer_icon4.jpg')
+					background-color: $icon4-color
+			&__copyright
+				font-size: 12px
+				line-height: 65px
+		
 @media (max-width:1369px) 
 	html
 		font-size: 39px
