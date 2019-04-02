@@ -11,8 +11,9 @@ function isVisibleBlock(el) {
 		//автоматическая анимация  нижних блоков  
     if (document.documentElement.clientWidth <= 1200)
 			{
-				for (var i = 0 ; i <= 3; i++) {
+				for (var i = 0 ; i <= animateBlocks.length-1; i++) {
 				var currentBlock = document.getElementsByClassName(animateBlocks[i]);
+        console.log(currentBlock);
 				currentBlock[0].classList.add("js-scroll-animate");
   				}
   			}
@@ -21,7 +22,7 @@ function isVisibleBlock(el) {
    		 var updownElem = document.querySelector('.menu');
    		 var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 	         //анимация блоков при скролле
-      		for (var i = 0 ; i <= 3; i++) {
+      		for (var i = 0 ; i <= animateBlocks.length-1; i++) {
       			var currentBlock = document.querySelectorAll("."+animateBlocks[i])[0];
 				if (isVisibleBlock(currentBlock)) {
 				var currentBlock = document.getElementsByClassName(animateBlocks[i]);
